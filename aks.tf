@@ -37,6 +37,9 @@ module "aks" {
   local_account_disabled            = true
   # Enable Container Insights: creates a Log Analytics workspace and the oms_agent addon.
   log_analytics_workspace_enabled   = true
+  # Enable Managed Prometheus: deploys the metrics add-on (paired with the Azure Monitor
+  # workspace + data collection rule association in monitoring.tf).
+  monitor_metrics                   = {}
   net_profile_dns_service_ip        = local.dns_service_ip
   net_profile_service_cidr          = local.service_cidr
   network_plugin                    = "azure"
