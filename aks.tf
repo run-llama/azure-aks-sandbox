@@ -35,7 +35,8 @@ module "aks" {
 
   key_vault_secrets_provider_enabled = true
   local_account_disabled            = true
-  log_analytics_workspace_enabled   = false
+  # Enable Container Insights: creates a Log Analytics workspace and the oms_agent addon.
+  log_analytics_workspace_enabled   = true
   net_profile_dns_service_ip        = local.dns_service_ip
   net_profile_service_cidr          = local.service_cidr
   network_plugin                    = "azure"
